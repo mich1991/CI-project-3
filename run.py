@@ -69,10 +69,11 @@ class Pet():
 
     def time_passed(self):
         """Increase value of every attribute at the end of each round"""
-        # pet_attributes = ['boredom', 'hunger', 'dirtiness','tiredness']
-        pet_attributes = [self.tiredness, self.hunger, self.boredom, self.dirtiness]
+        pet_attributes = ['boredom', 'hunger', 'dirtiness','tiredness']
         for attr in pet_attributes:
-            attr += random.randint(1, self.game_difficulty)
+            previous_value = self.__getattribute__(attr)
+            increment = random.randint(1, self.game_difficulty)
+            self.__setattr__(attr, previous_value + increment)
 
     def show_current_status(self):
         """Shows current attributes values for a pymagotchi"""
