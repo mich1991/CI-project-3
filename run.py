@@ -32,7 +32,10 @@ class Pet():
         if self.food_stock > 0:
             self.food_stock -= 1
             dish = random.randint(2,4)
-            self.hunger -= dish
+            if self.hunger < dish:
+                self.hunger = 0
+            else:
+                self.hunger -= dish
             print(f"\n{name} ate something from the fridge worth {dish} hunger points!")
         else:
             print(f"\nFridge is empty. Go and find some food already.")
@@ -70,6 +73,7 @@ class Pet():
     def time_passed(self):
         """Increase value of every attribute at the end of each round"""
         pet_attributes = ['boredom', 'hunger', 'dirtiness','tiredness']
+        self.round += 1
         for attr in pet_attributes:
             previous_value = self.__getattribute__(attr)
             increment = random.randint(1, self.game_difficulty)
@@ -107,6 +111,7 @@ class Pet():
 
 
     def game_level(self, level):
+        """Set difficulty level. Each levels has higher max random increment value for each attribute"""
         if level == 'easy':
             return 2
         elif level == 'medium':
@@ -117,6 +122,38 @@ class Pet():
             # Don't mess with me.
             return 9999
 
+    def game_status(self):
+        if self.hunger > 20:
+            self.is_alive = False
+            print("\n-------------------------")
+            print("\n--------GAME OVER--------")
+            print(f"\nGood job! {name} starved to death! Are you proud of yourself?")
+            print("\n-------------------------")
+        elif self.boredom > 20:
+            self.is_alive = False
+
+            print("\n-------------------------")
+            print("\n--------GAME OVER--------")
+            print(f"\n{name} abandoned you. It had better things thinks to do than being with such a boring person.")
+            print("\n-------------------------")
+
+        elif self.tiredness > 20:
+            self.is_alive = False
+
+            print("\n-------------------------")
+            print("\n--------GAME OVER--------")
+            print(f"\n{name} had heart attack from being exhausted for a long time.")
+            print("\n-------------------------")
+
+        elif self.dirtiness > 20:
+            self.is_alive = False
+
+            print("\n-------------------------")
+            print("\n--------GAME OVER--------")
+            print(f"\n{name} got infected and died. If only it took a shower from time to time...")
+            print("\n-------------------------")
+
+
 
 pymagotchi = Pet(name, level)
 
@@ -124,3 +161,5 @@ while pymagotchi.is_alive:
     pymagotchi.pet_activity_choice()
     pymagotchi.time_passed()
     pymagotchi.show_current_status()
+    pymagotchi.game_status()
+
