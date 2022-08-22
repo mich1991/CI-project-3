@@ -129,6 +129,8 @@ class Pet():
             print("\n-------------GAME OVER-------------")
             print(f"\nGood job! {name} starved to death! Are you proud of yourself?")
             print("\n-----------------------------------")
+            exit()
+
         elif self.boredom > 20:
             self.is_alive = False
 
@@ -136,6 +138,7 @@ class Pet():
             print("\n-------------GAME OVER-------------")
             print(f"\n{name} abandoned you. It had better things to do than being with such a boring person.")
             print("\n-----------------------------------")
+            exit()
 
         elif self.tiredness > 20:
             self.is_alive = False
@@ -143,6 +146,7 @@ class Pet():
             print("\n-------------GAME OVER-------------")
             print(f"\n{name} had heart attack from being exhausted for a long time.")
             print("\n-----------------------------------")
+            exit()
 
         elif self.dirtiness > 20:
             self.is_alive = False
@@ -150,6 +154,7 @@ class Pet():
             print("\n-------------GAME OVER-------------")
             print(f"\n{name} got infected and died. If only it took a shower from time to time...")
             print("\n-----------------------------------")
+            exit()
 
 
 pymagotchi = Pet(name, level)
