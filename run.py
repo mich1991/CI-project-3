@@ -42,7 +42,7 @@ class Pet():
 
     def play(self):
         """reduce boredom value by a random int."""
-        game_value = random.randint(1,4)
+        game_value = random.randint(2,4)
         if self.boredom < game_value:
             self.boredom = 0
         else:
@@ -56,14 +56,14 @@ class Pet():
 
     def food_hunting(self):
         """Collect random number of food"""
-        food_found = random.randint(1, 3)
+        food_found = random.randint(2, 4)
         self.food_stock += food_found
         print(f"\n{name} found {food_found} food. That will keep him going for awhile")
 
 
     def bath(self):
         """reduce dirtiness"""
-        bath_value = random.randint(1, 4)
+        bath_value = random.randint(3, 6)
         if self.dirtiness < bath_value:
             self.dirtiness = 0
         else:
@@ -83,10 +83,10 @@ class Pet():
         """Shows current attributes values for a pymagotchi"""
         print(f"-----------------------------------")
         print(f"\nRound: {self.round}  {self.name} current status :")
-        print(f"\nTiredness value : {self.tiredness} (0-20)")
-        print(f"\nHunger value : {self.hunger} (0-20)")
         print(f"\nBoredom value : {self.boredom} (0-20)")
+        print(f"\nHunger value : {self.hunger} (0-20)")
         print(f"\nDirtiness value : {self.dirtiness} (0-20)")
+        print(f"\nTiredness value : {self.tiredness} (0-20)")
         print(f"\nFridge has food units: {self.food_stock} (0-infinity!)")
         print(f"-----------------------------------")
 
@@ -125,41 +125,38 @@ class Pet():
     def game_status(self):
         if self.hunger > 20:
             self.is_alive = False
-            print("\n-------------------------")
-            print("\n--------GAME OVER--------")
+            print("\n-----------------------------------")
+            print("\n-------------GAME OVER-------------")
             print(f"\nGood job! {name} starved to death! Are you proud of yourself?")
-            print("\n-------------------------")
+            print("\n-----------------------------------")
         elif self.boredom > 20:
             self.is_alive = False
 
-            print("\n-------------------------")
-            print("\n--------GAME OVER--------")
-            print(f"\n{name} abandoned you. It had better things thinks to do than being with such a boring person.")
-            print("\n-------------------------")
+            print("\n-----------------------------------")
+            print("\n-------------GAME OVER-------------")
+            print(f"\n{name} abandoned you. It had better things to do than being with such a boring person.")
+            print("\n-----------------------------------")
 
         elif self.tiredness > 20:
             self.is_alive = False
-
-            print("\n-------------------------")
-            print("\n--------GAME OVER--------")
+            print("\n-----------------------------------")
+            print("\n-------------GAME OVER-------------")
             print(f"\n{name} had heart attack from being exhausted for a long time.")
-            print("\n-------------------------")
+            print("\n-----------------------------------")
 
         elif self.dirtiness > 20:
             self.is_alive = False
-
-            print("\n-------------------------")
-            print("\n--------GAME OVER--------")
+            print("\n-----------------------------------")
+            print("\n-------------GAME OVER-------------")
             print(f"\n{name} got infected and died. If only it took a shower from time to time...")
-            print("\n-------------------------")
-
+            print("\n-----------------------------------")
 
 
 pymagotchi = Pet(name, level)
 
 while pymagotchi.is_alive:
-    pymagotchi.pet_activity_choice()
     pymagotchi.time_passed()
     pymagotchi.show_current_status()
     pymagotchi.game_status()
+    pymagotchi.pet_activity_choice()
 
