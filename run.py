@@ -17,6 +17,15 @@ class Activity(Enum):
         return self.value
 
 
+class Difficulty(Enum):
+    EASY = 'easy'
+    MEDIUM = 'medium'
+    HARD = 'hard'
+
+    def __str__(self):
+        return self.value
+
+
 class Pet:
     """Create a pymagotchi"""
 
@@ -113,14 +122,16 @@ class Pet:
             print('----------------------')
             self.pet_activity_choice()
 
-
     def game_level(self, level):
+        print('level=', level)
+        print('Difficulty=', Difficulty.EASY)
+        print(level == Difficulty.EASY)
         """Set difficulty level. Each levels has higher max random increment value for each attribute"""
-        if level == 'easy':
+        if level == Difficulty.EASY:
             return 2
-        elif level == 'medium':
+        elif level == Difficulty.MEDIUM:
             return 4
-        elif level == 'hard':
+        elif level == Difficulty.HARD:
             return 6
         else:
             # Don't mess with me.
@@ -162,9 +173,8 @@ class Pet:
 
 
 def main():
-    """Incapsulate the main functionality of the game"""
-    difficulty = ['easy', 'medium', 'hard']
-    level = inquirer.list_input('Choose difficulty level', choices=difficulty)
+    """Encapsulate the main functionality of the game"""
+    level = Difficulty(inquirer.list_input('Choose difficulty level', choices=list(Difficulty)))
 
     name = inquirer.text(message="Enter your pymagotchi name")
 
