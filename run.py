@@ -45,18 +45,19 @@ class Pet:
         """Deduct 1 from foodStock to lower hunger"""
         if self.food_stock > 0:
             self.food_stock -= 1
-            dish = random.randint(2,4)
+            dish = random.randint(2, 4)
             if self.hunger < dish:
                 self.hunger = 0
             else:
                 self.hunger -= dish
-            print(f"\n{self.name} ate something from the fridge worth {dish} hunger points!")
+            print(f"\n{self.name} ate something from the fridge."
+                  f"It was worth {dish} hunger points!")
         else:
             print(f"\nFridge is empty. Go and find some food already.")
 
     def play(self):
         """reduce boredom value by a random int."""
-        game_value = random.randint(2,4)
+        game_value = random.randint(2, 4)
         if self.boredom < game_value:
             self.boredom = 0
         else:
@@ -72,7 +73,8 @@ class Pet:
         """Collect random number of food"""
         food_found = random.randint(2, 4)
         self.food_stock += food_found
-        print(f"\n{self.name} found {food_found} food. That will keep him going for awhile")
+        print(f"\n{self.name} found {food_found} food."
+              f"That will keep him going for awhile")
 
     def bath(self):
         """reduce dirtiness"""
@@ -81,11 +83,12 @@ class Pet:
             self.dirtiness = 0
         else:
             self.dirtiness -= bath_value
-        print(f"\n{self.name} finally took a bath! It was worth {bath_value} points!")
+        print(f"\n{self.name} finally took a bath! "
+              f"It was worth {bath_value} points!")
 
     def time_passed(self):
         """Increase value of every attribute at the end of each round"""
-        pet_attributes = ['boredom', 'hunger', 'dirtiness','tiredness']
+        pet_attributes = ['boredom', 'hunger', 'dirtiness', 'tiredness']
         self.round += 1
         for attr in pet_attributes:
             previous_value = self.__getattribute__(attr)
@@ -104,8 +107,14 @@ class Pet:
         print(f"-----------------------------------")
 
     def pet_activity_choice(self):
-        """Show menu options for player to choose current activity for pymagotchi"""
-        choice = Activity(inquirer.list_input(f"What should {self.name} do now?", choices=list(Activity)))
+        """
+        Show menu options for player to
+        choose current activity for pymagotchi
+        """
+        choice = Activity(inquirer.list_input(
+            f"What should {self.name} do now?",
+            choices=list(Activity)
+        ))
 
         if choice == Activity.PLAY:
             self.play()
@@ -123,10 +132,10 @@ class Pet:
             self.pet_activity_choice()
 
     def game_level(self, level):
-        print('level=', level)
-        print('Difficulty=', Difficulty.EASY)
-        print(level == Difficulty.EASY)
-        """Set difficulty level. Each levels has higher max random increment value for each attribute"""
+        """
+        Set difficulty level.
+        Each levels has higher max random increment value for each attribute
+        """
         if level == Difficulty.EASY:
             return 2
         elif level == Difficulty.MEDIUM:
@@ -134,7 +143,7 @@ class Pet:
         elif level == Difficulty.HARD:
             return 6
         else:
-            # Don't mess with me.
+            # Invalid input. That's a punishment for not following rules.
             return 9999
 
     def game_status(self):
@@ -142,7 +151,8 @@ class Pet:
             self.is_alive = False
             print("\n-----------------------------------")
             print("\n-------------GAME OVER-------------")
-            print(f"\nGood job! {self.name} starved to death! Are you proud of yourself?")
+            print(f"\nGood job! {self.name} starved to death! "
+                  f"Are you proud of yourself?")
             print("\n-----------------------------------")
             exit()
 
@@ -151,7 +161,9 @@ class Pet:
 
             print("\n-----------------------------------")
             print("\n-------------GAME OVER-------------")
-            print(f"\n{self.name} abandoned you. It had better things to do than being with such a boring person.")
+            print(f"\n{self.name} abandoned you. "
+                  f"It had better things to do than "
+                  f"being with such a boring person.")
             print("\n-----------------------------------")
             exit()
 
@@ -159,7 +171,8 @@ class Pet:
             self.is_alive = False
             print("\n-----------------------------------")
             print("\n-------------GAME OVER-------------")
-            print(f"\n{self.name} had heart attack from being exhausted for a long time.")
+            print(f"\n{self.name} had heart attack from "
+                  f"being exhausted for a long time.")
             print("\n-----------------------------------")
             exit()
 
@@ -167,14 +180,17 @@ class Pet:
             self.is_alive = False
             print("\n-----------------------------------")
             print("\n-------------GAME OVER-------------")
-            print(f"\n{self.name} got infected and died. If only it took a shower from time to time...")
+            print(f"\n{self.name} got infected and died. "
+                  f"If only it took a shower from time to time...")
             print("\n-----------------------------------")
             exit()
 
 
 def main():
     """Encapsulate the main functionality of the game"""
-    level = Difficulty(inquirer.list_input('Choose difficulty level', choices=list(Difficulty)))
+    level = Difficulty(inquirer.list_input('Choose difficulty level',
+                                           choices=list(Difficulty)
+                                           ))
 
     name = inquirer.text(message="Enter your pymagotchi name")
 
