@@ -1,31 +1,57 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Pymagotchi
 
-Welcome USER_NAME,
+## About
+Pymagotchi is a terminal game programed with Python, which runs in the Code Institute mock terminal on Heroku.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+[Tamagotchi](https://en.wikipedia.org/wiki/Tamagotchi) is a funny and a widely-known game in which the goal 
+is to take care of small creature called Tamagotchi in these project from now on known as Pymagotchi
+(Because it's created with python. That's a pun. I am trying to be funny here.)
+How long will creature survive depends on our decision and luck.
 
-## Reminders
+![](docs/am_i_responsive.png)
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+[Click here to try out the live game/project.](https://pymagotchi.herokuapp.com/)
 
-## Creating the Heroku app
+## User Experience
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+I aimed to create a story generator game for children that is fun and is very easy to manipulate and input data.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### The ideal client:
+- Middle age person
+- Had Tamagotchi when was I child
+- Children who want to have a pet
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+### The game will help clients to:
+- Remind of a childhood
+- Test their parenting skill
+- Get them familiar with terminal console and how to navigate it.
+- Provide entertainment
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+## User Stories
 
-Connect your GitHub repository and deploy as normal.
+1. As a user, I want to easily navigate through terminal options.
+2. As a user, I want game to be fun.
+3. As a user, I want to be able to finish the game during one session.
+4. As a user, I want to have different difficulty levels.
+5. As a user, I want to name my pymagotchi.
+6. As a user, I want to know how many rounds has my pymagotchi survived and compare that with friends scores.
 
-## Constraints
+## Owner Stories
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+1. As the owner, I want the game to be fun and make the user returning.
+2. As the owner, I want the game to remind older players theirs childhood and bring back emotion from that period.
+3. As the owner, I want game to not be too long soo I don't have to implement save/load functionality.
 
------
-Happy coding!
+## Features
+### Existing Features
+- 3 Difficulty levels
+- Pymagotchi naming
+- 5 activities to choose from.
+- RNG - random impact on pet stats each turn.
+- Round counting
+
+### Future features
+- Top 10 high scores board
+- Random event that might occur each turn. Like for ex. each turn there would be 10% chance to something unexpected happen.
+- Gaining experience/levels , choosing perks to  help pymagotchi stay alive longer.
+
