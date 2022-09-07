@@ -87,16 +87,19 @@ The following steps were done to deploy this project:
 
 1. From the Heroku dashboard, select 'New' in the top right-hand corner.
 2. Click 'Create new app'.
-3. Enter the app name and choose region as Europe.
+3. Enter the app name and choose region.
 4. Click 'Create app'.
-5. Select the 'Settings' tab, and scroll down to 'Buildpacks'.
-6. Add 'Python' and save changes, then add 'Node.js' and save the changes again.
-7. Scroll down to 'Config Vars' section, and add the 'KEY' and 'PORT' for the credentials and additional 8000 port for running the app.
-8. At the top of the page, click on the 'Deploy' section.
-9. Select Github as deployment method.
-10. Select 'Connect to Github', and locate the repository name and click on 'Connect' to link my Heroku app to my Github repository code.
-11. Scroll further down, select 'Enable Automatic Deploys' and then select 'Deploy Branch' to deploy project.
-12. After it has successfully deployed a 'view' button appears on screen and when clicked opens the deployed application.
+5. Choose Deployment method. In my case GitHub.
+6. Choose correct repository with Pymagotchi
+7. Enable Automatic Deploys
+8. Go to Settings
+9. Click Add buildpack
+10. Choose Python then Save changes
+11. Repeat click add buildpack, choose Nodejs
+12. Go to Deploy
+13. Section 'Manual deploy', choose you main/master branch, press 'Deploy branch'
+14. Wait for build to finish (Grab a coffee or something)
+15. Press 'Open app' in right top corner and have fun!
 
 ## Credits
 
