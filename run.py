@@ -187,11 +187,12 @@ class Pet:
 
 
 def main():
+    """Encapsulate the main functionality of the game"""
+
     print("==================================")
     print("============PYMAGOTCHI============")
     print("==================================")
 
-    """Encapsulate the main functionality of the game"""
     level = Difficulty(inquirer.list_input('Choose difficulty level',
                                            choices=list(Difficulty)
                                            ))
