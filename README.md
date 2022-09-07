@@ -80,4 +80,26 @@ I aimed to create a story generator game for children that is fun and is very ea
 - [PyCharm](https://www.jetbrains.com/pycharm/) - IDE of choice for working with python
 - [PEP8online](http://pep8online.com/) - To validate my code and check for errors
 
+## Deployment
+The project was developed using PyCharm and was deployed via the GitHub repository to Heroku.
 
+The following steps were done to deploy this project:
+
+1. From the Heroku dashboard, select 'New' in the top right-hand corner.
+2. Click 'Create new app'.
+3. Enter the app name and choose region as Europe.
+4. Click 'Create app'.
+5. Select the 'Settings' tab, and scroll down to 'Buildpacks'.
+6. Add 'Python' and save changes, then add 'Node.js' and save the changes again.
+7. Scroll down to 'Config Vars' section, and add the 'KEY' and 'PORT' for the credentials and additional 8000 port for running the app.
+8. At the top of the page, click on the 'Deploy' section.
+9. Select Github as deployment method.
+10. Select 'Connect to Github', and locate the repository name and click on 'Connect' to link my Heroku app to my Github repository code.
+11. Scroll further down, select 'Enable Automatic Deploys' and then select 'Deploy Branch' to deploy project.
+12. After it has successfully deployed a 'view' button appears on screen and when clicked opens the deployed application.
+
+## Credits
+
+- My [wife](https://disney.fandom.com/wiki/Madame_Medusa) ( <-- it's a trap) to give me inspiration to make Pymagotchi/Tamagotchi game
+- My mentor [Guido Cecilio](https://github.com/guidocecilio) for being soo helpful and also excited about the project idea. Plus showing me how useful Enum can be! Thanks Guido!
+- 'Inquirer' library authors/contributors for creating such amazing and easy to use library.
