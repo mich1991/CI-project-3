@@ -191,7 +191,7 @@ def main():
     level = Difficulty(inquirer.list_input('Choose difficulty level',
                                            choices=list(Difficulty)
                                            ))
-    name = ''
+    # Validate name input. Only letters are allowed
     while True:
         name = inquirer.text(message="Enter your pymagotchi name")
         if name.isalpha():
