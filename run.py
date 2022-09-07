@@ -191,8 +191,14 @@ def main():
     level = Difficulty(inquirer.list_input('Choose difficulty level',
                                            choices=list(Difficulty)
                                            ))
-
-    name = inquirer.text(message="Enter your pymagotchi name")
+    name = ''
+    while True:
+        name = inquirer.text(message="Enter your pymagotchi name")
+        if name.isalpha():
+            break
+        else:
+            print('Name is required and only letters are allowed')
+            continue
 
     print(f"\ngame difficulty is {level} and pet name is {name}")
 
