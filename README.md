@@ -41,6 +41,7 @@ I aimed to create a story generator game for children that is fun and is very ea
 1. As the owner, I want the game to be fun and make the user returning.
 2. As the owner, I want the game to remind older players theirs childhood and bring back emotion from that period.
 3. As the owner, I want game to not be too long soo I don't have to implement save/load functionality.
+4. As the owner, I want to secure correct way to play this game.
 
 ## Features
 ### Existing Features
@@ -54,4 +55,29 @@ I aimed to create a story generator game for children that is fun and is very ea
 - Top 10 high scores board
 - Random event that might occur each turn. Like for ex. each turn there would be 10% chance to something unexpected happen.
 - Gaining experience/levels , choosing perks to  help pymagotchi stay alive longer.
+- Graphical images of creature created in terminal
+
+## Testing
+
+### 1. [pep8online.com](http://pep8online.com/) result
+
+![](docs/pep8_result.png)
+### 2. Manual testing results
+
+![](docs/interface.png)
+- Thanks to 'Inquirer' library possible user input errors are minimized
+- Name input for Pymagatochi is validated by use of isalpha() method which secures that input value can be only letters
+- Difficulty levels accept 3 correct values. If somehow user managed to provide other value there is easter egg provided in code.
+
+### Summary
+- during manual testing didn't manage to find any bugs that could impact user experience.
+- 'Inquirer' library provides great user experience for terminal app.
+
+## Technology Used
+
+- [Github](https://github.com) - as source control
+- [Heroku](https://heroku.com) - deploying platform
+- [PyCharm](https://www.jetbrains.com/pycharm/) - IDE of choice for working with python
+- [PEP8online](http://pep8online.com/) - To validate my code and check for errors
+
 
